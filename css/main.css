@@ -1,3 +1,18 @@
+/* --- base --- */
+html {
+  background-color: #041323;
+  font-family: 'Sigmar One', cursive;
+}
+section {
+  width: 100vw;
+}
+h1{
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+}
+
 /* --- heading --- */
 header {
     height: 100vh;
@@ -38,9 +53,9 @@ header {
   }
   nav a {
       color: #fff;
-      font-size: 4em;
-      /*font-family: ;*/
-      /* to do: add font from google fonts*/
+      font-size: 3.5em;
+      font-family: 'Bangers', cursive;
+      text-transform: uppercase;
       text-decoration: none;
       text-align: center;
       margin: 25px 0;
@@ -104,4 +119,95 @@ header {
     top: 29px;
   }
   
+/* --- main body --- */
+#h1__latest {
+ margin-top: 5vh;
+}
+#container__latest {
+  text-align: center;
+}
+.link__latest__stories {
+  margin-top: 5vh;
+}
+.container__latest__dots {
+  text-align: center;
+  margin-top: 5vh;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 130%;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2em;
+  transition: 0.6s ease;
+  user-select: none;
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
+
+
+/* --- Small devices (portrait tablets and large phones, 600px and up) --- */
+@media only screen and (min-width: 600px) {
+  /* --- heading --- */
+  header {
+    height: 66vh; 
+  }
+  #header__inner {
+    height: 66vh;
+  }
+  /* --- main body --- */
+  .prev, .next {
+    top: 100%;
+  }
+}
+
+/* --- Medium devices (landscape tablets, 768px and up) --- */
+@media only screen and (min-width: 768px) {
+  /* --- heading --- */
+  header {
+    height: 50vh; 
+  }
+  #header__inner {
+    height: 50vh;
+  }
+   /* --- main body --- */
+   .prev, .next {
+    top: 90%;
+  }
+} 
+
+/* --- Large devices (laptops/desktops, 992px and up) --- */
+@media only screen and (min-width: 992px) {
+ 
+} 
+
+/*  --- Extra large devices (large laptops and desktops, 1200px and up) --- */
+@media only screen and (min-width: 1200px) {
   
+}
