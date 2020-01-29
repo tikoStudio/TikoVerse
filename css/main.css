@@ -2,9 +2,10 @@
 html {
   background-color: #041323;
   font-family: 'Sigmar One', cursive;
+  overflow-x: hidden;
 }
 section {
-  width: 100vw;
+  width: 100vw; 
 }
 h1{
   font-size: 3em;
@@ -15,50 +16,63 @@ h1{
 
 /* --- heading --- */
 header {
-    height: 100vh;
-    width: 100vw;
-    background-color: #B38282;
+  height: 100vh;
+  width: 100vw;
+  background-color: #B38282;
+  transition: 0.25s ease-in-out;
 }
-#header__inner {
-    height: 100vh;
-    width: 100vw;
-    background-image: url(../img/header__pattern.svg);
-    background-repeat: repeat;
-    background-position: center;
+.header__extended {
+  height: 100vh;
+  width: 100vw;
+  transition: 0.25s ease-in-out;
+}
+.header__inner {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../img/header__pattern.svg);
+  background-repeat: repeat;
+  background-position: center;
+  transition: background-image,height 0.25s ease-in-out;
+}
+.header__inner2 {
+  height: 100vh !important;
+  transition: background-image,height 0.25s ease-in-out;
+  
 }
 #img__logo {
-    margin: 40px 0 0 40px;
+  margin: 40px 0 0 40px;
 }
 #burger__menu {
-    width: 60px;
-    height: 45px;
-    right: 0px;
-    top: 0px;
-    margin: 57.5px 50px 0 0;
-    position: absolute;
-    cursor: pointer;
+  width: 60px;
+  height: 45px;
+  right: 0px;
+  top: 0px;
+  margin: 57.5px 50px 0 0;
+  position: absolute;
+  cursor: pointer;
   }
   nav {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
   .nav__toggle__hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: .25s ease-in;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.10s ease-in;
   }
   .nav__toggle__visible {
-      opacity: 1;
-      transition: .25s ease-out;
+    opacity: 1;
+    transition: 0.65s ease-out;
   }
   nav a {
-      color: #fff;
-      font-size: 3.5em;
-      font-family: 'Bangers', cursive;
-      text-transform: uppercase;
-      text-decoration: none;
-      text-align: center;
-      margin: 25px 0;
+    color: #fff;
+    font-size: 3.5em;
+    font-family: 'Bangers', cursive;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin: 25px 0;
+    user-select: none;
   }
 
 /* --- burger menu --- */
@@ -135,8 +149,8 @@ header {
 }
 .prev, .next {
   cursor: pointer;
-  position: absolute;
-  top: 130%;
+  position: relative;
+  bottom: -180px;
   padding: 16px;
   color: #fff;
   font-weight: bold;
@@ -145,7 +159,10 @@ header {
   user-select: none;
 }
 .next {
-  right: 0;
+  right: -40%;
+}
+.prev {
+  left: -40%;
 }
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
@@ -158,19 +175,13 @@ header {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  display: none;
 }
-.active, .dot:hover {
-  background-color: #717171;
-}
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
-
-
-
 
 /* --- Small devices (portrait tablets and large phones, 600px and up) --- */
 @media only screen and (min-width: 600px) {
@@ -178,7 +189,7 @@ header {
   header {
     height: 66vh; 
   }
-  #header__inner {
+  .header__inner {
     height: 66vh;
   }
   /* --- main body --- */
@@ -193,12 +204,12 @@ header {
   header {
     height: 50vh; 
   }
-  #header__inner {
+  .header__inner {
     height: 50vh;
   }
    /* --- main body --- */
    .prev, .next {
-    top: 90%;
+    bottom: -170px;
   }
 } 
 
@@ -209,5 +220,8 @@ header {
 
 /*  --- Extra large devices (large laptops and desktops, 1200px and up) --- */
 @media only screen and (min-width: 1200px) {
-  
+  /* --- main body --- */
+  .prev, .next {
+    bottom: -220px;
+  }
 }

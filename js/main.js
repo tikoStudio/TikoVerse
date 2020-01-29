@@ -3,14 +3,14 @@ $(document).ready(function(){
 	$('#burger__menu').click(function(){
         $(this).toggleClass('open');
         $('nav').toggleClass('nav__toggle__hidden nav__toggle__visible');
+        $('header').toggleClass('header__extended');
+        $('.header__inner').toggleClass('header__inner2');
 	});
 });
 
 
 
 /* add timer to auto scroll */
-
-
 var slideIndex = 1;
 var slides = document.getElementsByClassName("link__latest__stories");
 var next = document.querySelector('.next');
@@ -36,6 +36,7 @@ function currentSlide() {
   showSlides(slideIndex);
 }
 
+
 function showSlides(n) {
   var i;
   var dots = document.getElementsByClassName("dot");
@@ -50,3 +51,13 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+var myVar = setInterval(myTimer, 500);
+
+function myTimer() {
+  if(slideIndex <= slides.length) {
+    showSlides(++slideIndex);
+      }
+}
+
+
