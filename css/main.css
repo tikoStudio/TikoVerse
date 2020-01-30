@@ -4,6 +4,9 @@ html {
   font-family: 'Sigmar One', cursive;
   overflow-x: hidden;
 }
+.overflow {
+  overflow-y: hidden;
+}
 section {
   width: 100vw; 
 }
@@ -21,6 +24,9 @@ header {
   background-color: #B38282;
   transition: 0.25s ease-in-out;
 }
+.header__empty {
+  height: 0vh;
+}
 .header__extended {
   height: 100vh;
   width: 100vw;
@@ -32,6 +38,10 @@ header {
   background-image: url(../img/header__pattern.svg);
   background-repeat: repeat;
   background-position: center;
+  transition: background-image,height 0.25s ease-in-out;
+}
+.header__inner__empty {
+  height: 0vh !important;
   transition: background-image,height 0.25s ease-in-out;
 }
 .header__inner2 {
@@ -134,6 +144,7 @@ header {
   }
   
 /* --- main body --- */
+/* carrousel */
 #h1__latest {
  margin-top: 5vh;
 }
@@ -181,6 +192,53 @@ header {
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+/* filter */
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
 }
 
 /* --- Small devices (portrait tablets and large phones, 600px and up) --- */

@@ -1,16 +1,4 @@
-/* --- menu --- */
-$(document).ready(function(){
-	$('#burger__menu').click(function(){
-        $(this).toggleClass('open');
-        $('nav').toggleClass('nav__toggle__hidden nav__toggle__visible');
-        $('header').toggleClass('header__extended');
-        $('.header__inner').toggleClass('header__inner2');
-	});
-});
-
-
-
-/* add timer to auto scroll */
+/* --- carrousel --- */
 var slideIndex = 1;
 var slides = document.getElementsByClassName("link__latest__stories");
 var next = document.querySelector('.next');
